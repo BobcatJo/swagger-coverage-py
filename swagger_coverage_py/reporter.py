@@ -71,6 +71,26 @@ class CoverageReporter:
                 paths_to_delete=self.ignored_paths,
             )
 
+    # def generate_report(self):
+    #     base_dir = os.path.join(os.path.dirname(__file__), "swagger-coverage-commandline")
+    #     lib_path = os.path.join(base_dir, "lib", "*")
+    #
+    #     classpath = lib_path.replace("/", os.sep)
+    #     command = [
+    #         "java",
+    #         "-cp", classpath,
+    #         "com.github.viclovsky.swagger.coverage.CommandLine",
+    #         "-s", self.swagger_doc_file,
+    #         "-i", self.output_dir,
+    #     ]
+    #     if self.swagger_coverage_config:
+    #         command.extend(["-c", self.swagger_coverage_config])
+    #
+    #     if not DEBUG_MODE:
+    #         subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    #     else:
+    #         subprocess.run(command, check=True)
+
     def generate_report(self):
         Path(self.output_dir).mkdir(parents=True, exist_ok=True)
 
